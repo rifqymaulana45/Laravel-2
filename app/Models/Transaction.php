@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    use HasFactory;
+    public function detail(){
+        return $this->hasMany(TransactionDetail::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
